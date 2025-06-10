@@ -19,11 +19,12 @@ class "SiteList" {
   
   __functions__
   + fetchLayerData()
-  + changeView()
+  + changeActiveView()
 }
 
 class "SiteItem" {
   __props__
+  changeActiveView()
   layerItem
   
   __state__
@@ -33,6 +34,7 @@ class "SiteItem" {
 
 class "SiteDetails" {
   __props__
+  changeActiveView()
   layerItem
   
   __state__
@@ -42,6 +44,7 @@ class "SiteDetails" {
 
 class "SiteEditForm" {
   __props__
+  changeActiveView()
   layerItem
   
   __state__
