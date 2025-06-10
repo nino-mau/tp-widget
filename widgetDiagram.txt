@@ -1,0 +1,71 @@
+@startuml
+
+class "Widget" {
+  __props__
+  
+  __state__
+  searchInput
+  
+  __functions__
+}
+
+class "SiteList" {
+  __props__
+  searchValue
+  
+  __state__
+  layerData
+  activeView
+  
+  __functions__
+  + fetchLayerData()
+  + changeView()
+}
+
+class "SiteItem" {
+  __props__
+  layerItem
+  
+  __state__
+  
+  __functions__
+}
+
+class "SiteDetails" {
+  __props__
+  layerItem
+  
+  __state__
+  
+  __functions__
+}
+
+class "SiteEditForm" {
+  __props__
+  layerItem
+  
+  __state__
+  
+  __functions__
+}
+
+class "LayersService" {
+  __props__
+  
+  __state__
+  
+  __functions__
+  + fetchLayerData()
+  + deleteSite()
+  + editSite()
+}
+
+
+Widget --> SiteList
+SiteList ---> SiteItem
+SiteList ---> SiteDetails
+SiteList ---> SiteEditForm
+SiteList --- LayersService : use
+
+@enduml
+
